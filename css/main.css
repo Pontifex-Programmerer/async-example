@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    --primary: #ed0000;
+    --secondary: #3d0d90;
+    --accent: #fe4a4b;
+    --secondary-accent: #c2a0d1;
+    --background: #faf4f4;
+    --text: #130f0f;
+    --std-width: 85ch;
+    --max-width: 100%;
+
+}
+
+body {
+    background-color: var(--background);
+}
+
+body > * {
+    margin: 10px;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 30px 0;
+}
+button[type="submit"]{
+    border-radius: 10px;
+    border: 0px;
+    padding: 10px;
+    width: 6ch;
+}
+
+section {
+    border-radius: 25px;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.double-section {
+    display: flex;
+    width: var(--std-width);
+    max-width: 100%;
+}
+
+.double-section > * {
+    padding: 50px;
+}
+
+.flex-line {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.flex-center {
+    justify-content: space-evenly;
+}
+.full-width {
+    width: 100%;
+}
+.explicit-element {
+    align-items: center;
+    background-color: var(--primary);
+    color: var(--background);
+    display: flex;
+    flex-direction: column;
+}
+
+.interactive-element {
+    background-color: var(--secondary);
+    color: var(--background);
+}
+.negative {
+    background-color: var(--primary);
+    color: var(--background);
+}
+.positive{
+    background-color: #2de12d;
+}
+.readable {
+    background-color: var(--accent);
+}
+.searchbar > * {
+    margin: 0 0.5ch;
+}
+.std-width {
+    width: var(--std-width);
+}
+#searchform {
+    margin-left: 10px;
+}
+
+#searchform form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+/** 
+    copied from Google fonts
+*/
+.encode-sans-expanded-thin {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .encode-sans-expanded-extralight {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .encode-sans-expanded-light {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .encode-sans-expanded-regular {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .encode-sans-expanded-medium {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .encode-sans-expanded-semibold {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .encode-sans-expanded-bold {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .encode-sans-expanded-extrabold {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .encode-sans-expanded-black {
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
