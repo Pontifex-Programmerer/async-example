@@ -26,8 +26,13 @@
         <section id="searchform" class="interactive-element">
             <form>
                 <h2>Find person: </h2>
-                <label for="input">Search for: </label>
-                    <input type="text" name="input" id="name-search">
+                <label for="input">Search for:</label>
+                <div id="loader-dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <input type="text" name="input" id="name-search">
                 <div class="flex-line flex-center full-width">
                     <button id="async" type="submit" class="encode-sans-expanded-bold positive">Async</button>
                     <button id="sync" type="submit" class="encode-sans-expanded-bold negative">Sync</button>
@@ -35,5 +40,12 @@
             </form>
         </section>
     </div>
+    <section id="popup" class="popup invisible">
+        <h1>Search completed!</h1>
+        <p id="popup-result" class="result">
+            
+        </p>
+        <button id="remove-popup" class="positive centered">Ok</button>
+    </section>
 </body>
 </html>
