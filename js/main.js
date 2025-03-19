@@ -54,7 +54,6 @@ function blockAndConsumeTime(time){
     do {
         secondsPassed = Math.round((Date.now() - start)/1000);
         if(secondsPassed !== trackedSecond) {
-            console.log(secondsPassed);
             trackedSecond=secondsPassed;
             if(secondsPassed%2==0){
                 console.log('tic');
