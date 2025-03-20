@@ -7,27 +7,27 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/main.js" defer></script>
 </head>
-<body class="encode-sans-expanded-regular">
-    <section id="header" class="std-width centered explicit-element">
+<body class="encode-sans-expanded-regular flex-column std-width centered">
+    <section id="header" class="full-width explicit-element">
         <h1>People finder!</h1>
         <p>Use this search engine to find any person on the planet!</p>
     </section>
-    <div class="double-section std-width centered">
+    <div class="double-section">
         <section id="search-result" class="result padded-50">
             <h2>Results:</h2>
             <p>
                 The results of your search will be displayed here!
             </p>
+            <div id="loader-dots">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </section>
         <section id="searchform" class="interactive-element padded-50">
             <form>
                 <h2>Find person: </h2>
                 <label for="input">Search for:</label>
-                <div id="loader-dots">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
                 <input type="text" name="input" id="name-search">
                 <div class="flex-line flex-center full-width">
                     <button id="async" type="submit" class="encode-sans-expanded-bold positive">Async</button>
@@ -36,14 +36,7 @@
             </form>
         </section>
     </div>
-    <section id="popup" class="popup invisible">
-        <h1>Search completed!</h1>
-        <p id="popup-result" class="result">
-            
-        </p>
-        <button id="remove-popup" class="positive centered">Ok</button>
-    </section>
-    <section id="explanation" class="std-width centered readable">
+    <section id="explanation" class="full-width padded-50 readable">
         <h2>About this page:</h2>
         <p>What this page really does is to demonstrate the difference between an asynchronous function call and a synchronized
             function call. 

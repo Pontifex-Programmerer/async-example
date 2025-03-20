@@ -1,11 +1,6 @@
 const asyncBtn = document.querySelector('#async');
 const syncBtn = document.querySelector('#sync');
 const searchField = document.querySelector('#name-search');
-const popupRemBtn = document.querySelector('#remove-popup');
-
-popupRemBtn.addEventListener('click', e => {
-    togglePopup();
-});
 
 asyncBtn.addEventListener('click', e => {
     e.preventDefault();
@@ -26,7 +21,7 @@ syncBtn.addEventListener('click', e => {
             const timePassed = blockAndConsumeTime(generateRandomMilliseconds());
             console.log('search took', timePassed, 'seconds');
             const result = getRandomResult(name);
-            togglePopup(result);
+            setResult(result);
             searchField.value="";
             toggleLoading();
         }, 10);
@@ -68,27 +63,28 @@ function blockAndConsumeTime(time){
 }
 
 function toggleLoading() {
+    const searchHeading = document.querySelector('#search-result h2');
+    const resultText = document.querySelector('#search-result p');
     const searchText = 'Searching...';
-    const statusText = 'Search for:';
+    const statusText = 'Result:';
     const loaderDots = document.querySelector('#loader-dots');
-    const labelForInput = document.querySelector('label[for="input"]');
 
-    if(labelForInput.innerText == searchText) labelForInput.innerText = statusText;
-    else labelForInput.innerText = searchText; 
-    console.log(labelForInput.innerText)
+    if(searchHeading.innerText == searchText){ 
+        searchHeading.innerText = statusText;
+    } else {
+        searchHeading.innerText = searchText;
+        resultText.innerText = '';
+    } 
     loaderDots.classList.toggle('loader-dots');
 }
 
-function togglePopup(result){
-    const popup = document.querySelector('#popup');
-    popup.classList.toggle('invisible');
-    const popupresult = document.querySelector('#popup-result');
-
+function setResult(result){
+    const searchResult = document.querySelector('#search-result p');
     if(typeof result !== 'undefined') {
-        popupresult.innerText=result;
+        searchResult.innerText=result;
     } else {
         // clear content when removing the popup or result is undefined
-        popupresult.innerText='';
+        searchResult.innerText='';
     }
 }
 

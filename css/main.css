@@ -17,7 +17,7 @@ body {
 }
 
 body > * {
-    margin: 10px;
+    margin-top: 10px;
 }
 
 h1 {
@@ -58,9 +58,6 @@ section {
 .double-section >*:nth-child(1){
     width: 60%;
 }
-.fill-width {
-    width: 100%;
-}
 .flex-line {
     display: flex;
     align-items: center;
@@ -72,6 +69,7 @@ section {
 }
 
 .full-width {
+    box-sizing: border-box;
     width: 100%;
 }
 
@@ -106,7 +104,7 @@ section {
     background-color: var(--secondary-accent);
     height: 12px;
     width: 12px;
-    border: solid 2px var(--secondary-accent);
+    border: solid 2px var(--secondary);
     border-radius: 12px;
     animation: bounce 4s infinite ease-in-out;
 }
