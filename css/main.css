@@ -6,6 +6,7 @@
     --accent: #fe4a4b;
     --secondary-accent: #c2a0d1;
     --background: #faf4f4;
+    --shadow-overlay: rgba(0, 71, 129, 0.822);
     --text: #130f0f;
     --std-width: 85ch;
     --max-width: 100%;
@@ -37,7 +38,7 @@ button {
 }
 
 button:hover {
-    border-color: var(--secondary-accent);
+    color: var(--shadow-overlay);
 }
 
 section {
