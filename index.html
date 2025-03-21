@@ -23,6 +23,7 @@
                 <div></div>
                 <div></div>
             </div>
+            <button id="clear" class="invisible negative">Clear</button>
         </section>
         <section id="searchform" class="interactive-element padded-50">
             <form>
@@ -37,10 +38,17 @@
         </section>
     </div>
     <section id="explanation" class="full-width padded-50 readable">
-        <h2>About this page:</h2>
-        <p>What this page really does is to demonstrate the difference between an asynchronous function call and a synchronized
-            function call. 
-            <br><br>
+        <h2>Synchronized vs Asynchronized functions</h2>
+        <p>
+            <b><i>Sync</i></b> - when pressing this button, you are starting a <b>synchronized</b> function call.<br>
+            synchronized functions will block all other activity on a web page, such as GUI updates or other button presses, making your web-page unresponsive.
+            It is ok to use synchronized functions for most cases, but you should <b>avoid</b> using them if they take a long time to complete.
+        </p>
+        <p>
+            <b><i>Async</i></b> - when pressing this button, you are starting an <b>asynchronous</b> function call.<br>
+            Asynchronous function calls are not blocking any other processes on your web page, and can be aborted if needed. <i>Any operation that takes an unpredictable
+            amount of time to complete shall always be asynchronous.</i><br><br>
+            When async processes are running, you are able to interact with web-pages and programs normally.
         </p>
         <p>
             <b>! Notice how the page "freezes" when doing a synchronous search</b>

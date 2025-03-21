@@ -1,10 +1,32 @@
+const resultFieldDefaultH2 = "Results:";
+const resultFieldDefaultP = "The results of your search will be displayed here!";
+
 const asyncBtn = document.querySelector('#async');
 const syncBtn = document.querySelector('#sync');
 const searchField = document.querySelector('#name-search');
+const clearBtn = document.querySelector('#clear');
+
+
+clearBtn.addEventListener('click', e => {
+    e.preventDefault();
+    clearSearchResult();
+});
 
 asyncBtn.addEventListener('click', e => {
     e.preventDefault();
+    const name = searchField.value;
     console.info('Initiating async systemcall...');
+    asyncConsumeTime(generateRandomMilliseconds())
+        .then(cb => {
+            const result = cb(name);
+            setResult(result);
+        })
+        .catch(error => {
+            console.log('an error has occured!');
+        })
+        .finally(()=>{
+            toggleLoading();
+        })
 });
 
 syncBtn.addEventListener('click', e => {
@@ -24,9 +46,11 @@ syncBtn.addEventListener('click', e => {
             setResult(result);
             searchField.value="";
             toggleLoading();
+            clearBtn.classList.remove('invisible');
         }, 10);
     } else {
-        console.warn('There is noone to search for!')
+        console.warn('There is noone to search for!');
+        //animate searchfield?
     }
 
 });
@@ -62,15 +86,36 @@ function blockAndConsumeTime(time){
     return secondsPassed;
 }
 
+async function asyncConsumeTime(){
+    toggleLoading();
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            resolve(getRandomResult);
+        }, generateRandomMilliseconds()+5000);
+    })
+}
+
+function clearSearchResult(){
+    const searchHeading = document.querySelector('#search-result h2');
+    const resultText = document.querySelector('#search-result p');
+    clearBtn.classList.toggle('invisible');
+    searchHeading.innerText=resultFieldDefaultH2;
+    resultText.innerText=resultFieldDefaultP;
+
+
+}
+
 function toggleLoading() {
     const searchHeading = document.querySelector('#search-result h2');
     const resultText = document.querySelector('#search-result p');
     const searchText = 'Searching...';
-    const statusText = 'Result:';
     const loaderDots = document.querySelector('#loader-dots');
 
+    clearBtn.classList.add('invisible');
+
     if(searchHeading.innerText == searchText){ 
-        searchHeading.innerText = statusText;
+        searchHeading.innerText = resultFieldDefaultH2;
     } else {
         searchHeading.innerText = searchText;
         resultText.innerText = '';
